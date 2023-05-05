@@ -12,8 +12,8 @@ const About = () => (
       />
       <h1 className="not-found-heading">Lost Your Way?</h1>
       <p className="not-found-description">
-        Sorry, we can't that page. You will find lots to explore on the home
-        page.
+        Sorry, we cannot find that page. You will find lots to explore on the
+        home page
       </p>
     </div>
   </>

@@ -17,52 +17,54 @@ const Header = props => {
   }
 
   return (
-    <nav className="nav-container">
-      <img
-        className="website-logo"
-        alt="website logo"
-        src="https://assets.ccbp.in/frontend/react-js/hamburger-menu-website-logo.png"
-        onClick={onClickLogo}
-      />
-      <Popup
-        modal
-        trigger={
-          <button
-            data-testid="hamburgerIconButton"
-            className="trigger-button"
-            type="button"
-          >
-            <GiHamburgerMenu className="menu-icon" />
-          </button>
-        }
-        overlayStyle={overlayStyles}
-      >
-        {close => (
-          <div className="links-container">
+    <div className="nav-main">
+      <nav className="nav-container">
+        <img
+          className="website-logo"
+          alt="website logo"
+          src="https://assets.ccbp.in/frontend/react-js/hamburger-menu-website-logo.png"
+          onClick={onClickLogo}
+        />
+        <Popup
+          modal
+          trigger={
             <button
-              data-testid="closeButton"
+              data-testid="hamburgerIconButton"
+              className="trigger-button"
               type="button"
-              className="close-button"
-              onClick={() => close()}
             >
-              <IoMdClose className="close-icon" />
+              <GiHamburgerMenu className="menu-icon" />
             </button>
-            <div className="routes-container">
-              <AiFillHome className="link-icons" />
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
-            </div>
-            <div className="routes-container">
-              <BsInfoCircleFill className="link-icons" />
-              <Link to="/about" className="nav-link">
-                About
-              </Link>
-            </div>
-          </div>
-        )}
-      </Popup>
-    </nav>
+          }
+          overlayStyle={overlayStyles}
+        >
+          {close => (
+            <ul className="links-container">
+              <button
+                data-testid="closeButton"
+                type="button"
+                className="close-button"
+                onClick={() => close()}
+              >
+                <IoMdClose className="close-icon" />
+              </button>
+              <li className="routes-container">
+                <Link to="/" className="nav-link">
+                  <AiFillHome alt="website logo" className="link-icons" />
+                  Home
+                </Link>
+              </li>
+              <li className="routes-container">
+                <Link to="/about" className="nav-link">
+                  <BsInfoCircleFill alt="website logo" className="link-icons" />
+                  About
+                </Link>
+              </li>
+            </ul>
+          )}
+        </Popup>
+      </nav>
+    </div>
   )
 }
 
